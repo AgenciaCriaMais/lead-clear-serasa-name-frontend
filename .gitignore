@@ -5,6 +5,8 @@
 /tmp
 /out-tsc
 /bazel-out
+.idea
+.vscode
 
 # Node
 /node_modules
