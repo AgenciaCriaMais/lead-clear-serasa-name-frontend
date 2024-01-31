@@ -6,6 +6,7 @@ jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
+    environment: Prod
     timeout-minutes: 10
     steps:
       - name: 🚚 Get latest code
