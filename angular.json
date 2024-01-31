@@ -30,9 +30,32 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/style.css",
+              "src/assets/css/owl.carousel.min.css",
+              "src/assets/css/owl.theme.default.min.css",
+              "src/assets/css/jquery.fancybox.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/toastr.min.css",
+              "src/assets/css/cb-slider.css",
+              "src/assets/css/font-awesome.css",
+              "src/assets/css/ionicons.min.css",
               "src/styles.sass"
             ],
-            "scripts": []
+            "scripts": [
+              "src/js/jquery-2.1.1.min.js",
+              "src/js/bootstrap.min.js",
+              "src/js/wow.min.js",
+              "src/js/masonry.pkgd.min.js",
+              "src/js/jquery.nav.js",
+              "src/js/owl.carousel.min.js",
+              "src/js/jquery.easing.min.js",
+              "src/js/toastr.min.js",
+              "src/js/jquery.fancybox.pack.js",
+              "src/js/waypoint.js",
+              "src/js/isotope.min.js",
+              "src/js/main.js"
+            ]
           },
           "configurations": {
             "production": {
