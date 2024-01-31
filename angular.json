@@ -43,18 +43,18 @@
               "src/styles.sass"
             ],
             "scripts": [
-              "src/js/jquery-2.1.1.min.js",
-              "src/js/bootstrap.min.js",
-              "src/js/wow.min.js",
-              "src/js/masonry.pkgd.min.js",
-              "src/js/jquery.nav.js",
-              "src/js/owl.carousel.min.js",
-              "src/js/jquery.easing.min.js",
-              "src/js/toastr.min.js",
-              "src/js/jquery.fancybox.pack.js",
-              "src/js/waypoint.js",
-              "src/js/isotope.min.js",
-              "src/js/main.js"
+              "src/assets/js/jquery-2.1.1.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/wow.min.js",
+              "src/assets/js/masonry.pkgd.min.js",
+              "src/assets/js/jquery.nav.js",
+              "src/assets/js/owl.carousel.min.js",
+              "src/assets/js/jquery.easing.min.js",
+              "src/assets/js/toastr.min.js",
+              "src/assets/js/jquery.fancybox.pack.js",
+              "src/assets/js/waypoint.js",
+              "src/assets/js/isotope.min.js",
+              "src/assets/js/main.js"
             ]
           },
           "configurations": {
