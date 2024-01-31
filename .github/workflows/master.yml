@@ -26,14 +26,13 @@ jobs:
         run: |
           ls
 
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: FTP Deploy Locaweb
+        uses: locaweb/ftp-deploy@1.0.0
         with:
-          server: ${{ secrets.SERVE_LEAD_SERASA_FRONT }}
-          username: ${{ secrets.USERNAME_LEAD_SERASA_FRONT }}
+          host: ${{ secrets.SERVE_LEAD_SERASA_FRONT }}
+          user: ${{ secrets.USERNAME_LEAD_SERASA_FRONT }}
           password: ${{ secrets.PASSWORD_LEAD_SERASA_FRONT }}
-          dangerous-clean-slate: true
-          local-dir: './dist/lead-clear-serasa-name/'
-          server-dir: public_html/
-          port: 21
+          localDir: './dist/lead-clear-serasa-name/'
+
+
 
