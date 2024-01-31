@@ -26,7 +26,7 @@ jobs:
           ls
 
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.SERVE_LEAD_SERASA_FRONT }}
           username: ${{ secrets.USERNAME_LEAD_SERASA_FRONT }}
