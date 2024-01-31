@@ -82,7 +82,7 @@ blockquote span:before{content:'';width:12px;height:1px;background:#444444;posit
 .fancybox-type-image .fancybox-close{right:0px;top:0px;width:45px;height:45px;background:url(../images/icon-cross.png) center center no-repeat;background-color:#444444 !important;}
 .fancybox-type-image .fancybox-close:hover{background-color:#000000 !important;}
 .fancybox-type-image .fancybox-skin{padding:0px !important;}
-.section_heading{margin-top:0;background:-webkit-linear-gradient(#2371ae, #bb47d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;position:relative;display:inline-block;}
+.section_heading{margin-top:0;background:-webkit-linear-gradient(#2371ae, #043962);-webkit-background-clip:text;-webkit-text-fill-color:transparent;position:relative;display:inline-block;}
 @media only screen and (max-width:767px){.section_heading{font-size:22px;line-height:30px;margin-bottom:30px;}
 }
 @media only screen and (max-width:480px){.section_heading{font-size:18px;}
@@ -153,7 +153,7 @@ input[type="submit"]:focus{color:#FFFFFF;background:#2371ae;background:linear-gr
 .logo{padding:5px 15px 0px;display:inline-block;position:relative;}
 .logo .sticky_logo{visibility:hidden;}
 .logo img.sticky_logo{opacity:0;position:absolute;top:0;}
-.logo img{width:170px;}
+.logo img{width:240px;}
 .button_container{position:relative;height:30px;width:30px;cursor:pointer;z-index:100;-webkit-transition:opacity .25s ease;transition:opacity .25s ease;}
 .button_container span{background:#fff;border:none;height:3.2px;width:100%;position:absolute;top:0;left:0;-webkit-transition:all .35s ease;transition:all .35s ease;cursor:pointer;}
 .button_container span:nth-of-type(2){top:9px;width:70% !important;left:8px;}
@@ -175,10 +175,10 @@ input[type="submit"]:focus{color:#FFFFFF;background:#2371ae;background:linear-gr
 .sticky-nav.reveal-menu-white .logo img.sticky_logo{opacity:1;}
 .sticky-nav .logo a img,
 .sticky-nav-white .logo a img,
-.sticky-nav.reveal-menu-white .logo a img{margin-top:2px;width:150px;}
+.sticky-nav.reveal-menu-white .logo a img{margin-top:2px;width:240px;}
 @media only screen and (max-width:360px){.sticky-nav .logo a img,
 .sticky-nav-white .logo a img,
-.sticky-nav.reveal-menu-white .logo a img{width:115px;}
+.sticky-nav.reveal-menu-white .logo a img{width:240px;}
 }
 .sticky-nav .menushow .menu-btn .button_container .top,
 .sticky-nav .menushow .menu-btn .button_container .bottom,
@@ -214,7 +214,8 @@ input[type="submit"]:focus{color:#FFFFFF;background:#2371ae;background:linear-gr
 }
 #mt_banner{overflow:hidden;background-size:cover;background-repeat:no-repeat;position:relative;width:100%;background-attachment:fixed;}
 #mt_banner .bg_home{width:100%;height:100%;position:absolute;top:0;left:0;z-index:-9999;}
-#mt_banner .overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:#2371ae;background:linear-gradient(to right, #2371ae 0%, #bb47d4 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2371ae', endColorstr='#bb47d4', GradientType=1);opacity:0.8;z-index:10;}
+#mt_banner .overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:#2371ae;
+  background:linear-gradient(to right, #2371ae 0%, #000000 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2371ae', endColorstr='#bb47d4', GradientType=1);opacity:0.8;z-index:10;}
 #mt_banner .static{position:static;}
 #mt_banner .relative{position:relative;}
 #mt_banner .banner-wrapper{position:absolute;top:50%;z-index:18;width:100%;margin:0px auto;transform:translate(-50%, -50%);left:50%;}
@@ -252,7 +253,7 @@ input[type="submit"]:focus{color:#FFFFFF;background:#2371ae;background:linear-gr
 }
 @media only screen and (max-width:767px){#mt_about_me .about_heading span{display:block;font-size:18px;margin-left:30px;position:relative;transform:initial;}
 }
-#mt_about_me .about_heading span:before{background:#2371ae;background:linear-gradient(to right, #2371ae 0%, #bb47d4 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2371ae', endColorstr='#bb47d4', GradientType=1);content:"";height:100px;left:-65px;position:absolute;top:-80%;transform:rotate(-90deg);width:10px;}
+#mt_about_me .about_heading span:before{background:#2371ae;background:linear-gradient(to right, #2371ae 0%, #092e42 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2371ae', endColorstr='#bb47d4', GradientType=1);content:"";height:100px;left:-65px;position:absolute;top:-80%;transform:rotate(-90deg);width:10px;}
 @media only screen and (min-width:767px) and (max-width:991px){#mt_about_me .about_heading span:before{top:-141%;}
 }
 @media only screen and (max-width:767px){#mt_about_me .about_heading span:before{height:6px;left:-106px;position:absolute;top:10px;transform:initial;width:100px;}

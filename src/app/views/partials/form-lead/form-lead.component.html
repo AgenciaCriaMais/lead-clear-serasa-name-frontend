@@ -1,0 +1,79 @@
+<section id="mt_contact_section">
+  <div class="main_section_heading text-center">
+    <h2 class="section_heading text-center">Vamos conversar
+    </h2>
+  </div>
+  <div class="container">
+    <div class="row get_in_touch_row">
+      <div class="col-lg-7 table_col no_padding col_get_in_touch">
+        <div class="get_in_touch">
+          <div class="get_in_touch_wrapper">
+            <h2 class="col_title">Entrar em contato</h2>
+            <p class="col_desc">
+              Preencha o formulário de contato rápido e um de nossos agentes entrará em contato em até 24 horas.
+            </p>
+            <form id="contact_form" [formGroup]="form" (ngSubmit)="onSubmit()">
+              <input type="text" id="name" formControlName="name" placeholder="Nome Completo" required>
+              <input type="email" name="email" id="email" formControlName="email" placeholder="Seu melhor e-mail"
+                     required>
+              <input type="text" name="cpf" id="cpf" formControlName="cpf" placeholder="Seu CPF" required>
+              <select formControlName="syndicate">
+                <option *ngFor="let sindicato of sindicatos" [value]="sindicato.id">
+                  {{ sindicato.name }}
+                </option>
+              </select>
+              <input type="text" name="phone" id="phone" formControlName="phone"
+                               placeholder="Seu telefone. Exemplo: 61999999999" required>
+              <button class="mt_btn_white" id="submit-btn">Agende um Contato Conosco Hoje!<span class="mt_load"><span></span></span>
+              </button>
+              <div id="msg"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 table_col no_padding">
+        <div class="connect_with_us">
+          <ul class="list-unstyled">
+            <li>
+              <h2 class="main_heading">
+                Conecte-se conosco
+              </h2>
+              <p>
+                Para qualquer dúvida ou suporte: envie-nos um email para
+                <br>
+                <b>
+                  <a href="mailto:suporte@vbsassessoria.com.br">
+                    suporte@vbsasseria.com.br
+                  </a>
+                </b>
+              </p>
+            </li>
+            <li>
+              <h3 class="phone_number">
+                Ligue:<a href="tel:+55 61 99624-7771">
+                +55 61 99624-7771</a>
+              </h3>
+            </li>
+            <li>
+              <h4 class="address_heading">
+                Endereço:
+              </h4>
+              <p>
+                Setor SHTN Trecho 01 lote 01 'b' Asa Norte
+              </p>
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <div class="row">
+        <button class="btn btn-default " (click)="onDebugging()">:: Debugar Formuário em Desenvolvimento ::<span class="mt_load"><span></span></span></button>
+        <pre *ngIf="form && debugging">
+          {{ form.value|json }}
+        </pre>
+      </div>
+    </div>
+  </div>
+</section>
