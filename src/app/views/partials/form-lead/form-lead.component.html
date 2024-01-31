@@ -12,19 +12,20 @@
             <p class="col_desc">
               Preencha o formulário de contato rápido e um de nossos agentes entrará em contato em até 24 horas.
             </p>
-            <form id="contact_form" [formGroup]="form" (ngSubmit)="onSubmit()">
-              <input type="text" id="name" formControlName="name" placeholder="Nome Completo" required>
-              <input type="email" name="email" id="email" formControlName="email" placeholder="Seu melhor e-mail"
-                     required>
-              <input type="text" name="cpf" id="cpf" formControlName="cpf" placeholder="Seu CPF" required>
+            <form (ngSubmit)="onSubmit()" [formGroup]="form" id="contact_form">
+              <input formControlName="name" id="name" placeholder="Nome Completo" required type="text">
+              <input formControlName="email" id="email" name="email" placeholder="Seu melhor e-mail" required
+                     type="email">
+              <input formControlName="cpf" id="cpf" name="cpf" placeholder="Seu CPF" required type="text">
               <select formControlName="syndicate">
                 <option *ngFor="let sindicato of sindicatos" [value]="sindicato.id">
                   {{ sindicato.name }}
                 </option>
               </select>
-              <input type="text" name="phone" id="phone" formControlName="phone"
-                               placeholder="Seu telefone. Exemplo: 61999999999" required>
-              <button class="mt_btn_white" id="submit-btn">Agende um Contato Conosco Hoje!<span class="mt_load"><span></span></span>
+              <input formControlName="phone" id="phone" name="phone" placeholder="Seu telefone. Exemplo: 61999999999"
+                     required type="text">
+              <button class="mt_btn_white" id="submit-btn">Agende um Contato Conosco Hoje!<span
+                class="mt_load"><span></span></span>
               </button>
               <div id="msg"></div>
             </form>
@@ -69,7 +70,8 @@
     </div>
     <div class="">
       <div class="row">
-        <button class="btn btn-default " (click)="onDebugging()">:: Debugar Formuário em Desenvolvimento ::<span class="mt_load"><span></span></span></button>
+        <button (click)="onDebugging()" class="btn btn-default ">:: Debugar Formuário em Desenvolvimento ::<span
+          class="mt_load"><span></span></span></button>
         <pre *ngIf="form && debugging">
           {{ form.value|json }}
         </pre>

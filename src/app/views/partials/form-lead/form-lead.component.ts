@@ -29,6 +29,15 @@ export class FormLeadComponent implements OnInit {
     this.createForm();
   }
 
+  public onSubmit(): void {
+    const formData: FormLeadDto = new FormLeadDto(this.form.value);
+    console.log('Fomulário de Lead:', formData);
+  }
+
+  public onDebugging(): void {
+    this.debugging = !this.debugging;
+  }
+
   private createForm(): void {
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
@@ -39,14 +48,5 @@ export class FormLeadComponent implements OnInit {
       phone: ['', Validators.required],
       description: ['', Validators.required]
     });
-  }
-
-  public onSubmit(): void {
-    const formData: FormLeadDto = new FormLeadDto(this.form.value);
-    console.log('Fomulário de Lead:', formData);
-  }
-
-  public onDebugging(): void {
-    this.debugging = !this.debugging;
   }
 }

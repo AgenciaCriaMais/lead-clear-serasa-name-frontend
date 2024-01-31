@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FormLeadComponent } from './form-lead.component';
+import {FormLeadComponent} from './form-lead.component';
 
 describe('FormLeadComponent', () => {
   let component: FormLeadComponent;
