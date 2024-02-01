@@ -6,6 +6,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {BannerComponent} from './banner/banner.component';
 import {AboutMeComponent} from './about-me/about-me.component';
 import {HeaderComponent} from './header/header.component';
+import {ListLeadComponent} from './list-lead/list-lead.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {HeaderComponent} from './header/header.component';
     FormLeadComponent,
     BannerComponent,
     AboutMeComponent,
-    HeaderComponent
+    HeaderComponent,
+    ListLeadComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import {HeaderComponent} from './header/header.component';
     FormLeadComponent,
     BannerComponent,
     AboutMeComponent,
-    HeaderComponent
+    HeaderComponent,
+    ListLeadComponent
   ]
 })
 export class PartialsModule {

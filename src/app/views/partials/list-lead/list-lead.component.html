@@ -1,0 +1,57 @@
+<div id="leads">
+  <ol class="breadcrumb">
+    <li><a href="#">Dasboard</a></li>
+    <li><a class="active" href="#">Leads</a></li>
+  </ol>
+  <div class="bs-example" data-example-id="panel-without-body-with-table">
+    <div class="panel panel-default">
+      <div class="panel-heading">Lista de Leads</div>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>CPF</th>
+            <th>Status</th>
+            <th>Telefone</th>
+            <th>Sindicato</th>
+            <th>Ação</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of '. '.repeat(23).split(' '), let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>Jean Paul</td>
+            <td>jeanpaulwebb@gmail.com</td>
+            <td>01951532198</td>
+            <td>Em andamento</td>
+            <td>(61) 9 84195908</td>
+            <td>Sinpro</td>
+            <td>Editar | Excluir</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="..." class="paginate">
+    <ul class="pager">
+      <li><a href="#">Voltar</a></li>
+      <li><a href="#">Avançar</a></li>
+    </ul>
+  </nav>
+  <footer class="footer position-absolute">
+    <div class="row g-0 justify-content-between align-items-center h-100">
+      <div class="col-12 col-sm-auto text-center">
+        <p class="mb-0 mt-2 mt-sm-0 text-body">Sua ponte para um futuro<span
+          class="d-none d-sm-inline-block"></span><span class="d-none d-sm-inline-block mx-1"></span><br
+          class="d-sm-none">{{ today }} ©<a class="mx-1">VB Santos Assessoria</a></p>
+      </div>
+      <div class="col-12 col-sm-auto text-center">
+        <p class="mb-0 text-body-tertiary text-opacity-85">v1.0.0</p>
+      </div>
+    </div>
+  </footer>
+</div>

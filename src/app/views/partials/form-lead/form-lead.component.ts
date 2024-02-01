@@ -4,8 +4,8 @@ import {FormLeadDto} from "./form-lead-dto";
 
 /**
  * @author Jean Paul - <jeanpaulwebb@gmail.com>
- * @class FooterComponent
- * @description Footer
+ * @class FormLeadComponent
+ * @description Formulário de Lead
  * @date 31/01/2024
  */
 @Component({
