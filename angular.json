@@ -56,7 +56,8 @@
               "src/assets/js/waypoint.js",
               "src/assets/js/isotope.min.js",
               "src/assets/js/main.js"
-            ]
+            ],
+            "allowedCommonJsDependencies": ["sweetalert2"]
           },
           "configurations": {
             "production": {

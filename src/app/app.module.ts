@@ -4,8 +4,11 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {PartialsModule} from "./views/partials/partials.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {PagesModule} from "./views/pages/pages.module";
+import {StoreModule} from '@ngrx/store';
+import {HttpResponseInterceptor} from "./services/http-response-interceptor.service";
+import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from "ngx-mask";
 
 @NgModule({
   declarations: [
@@ -17,10 +20,20 @@ import {PagesModule} from "./views/pages/pages.module";
     AppRoutingModule,
     HttpClientModule,
     PartialsModule,
-    PagesModule
+    PagesModule,
+    StoreModule.forRoot({}, {}),
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpResponseInterceptor,
+      multi: true
+    },
+    provideNgxMask()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

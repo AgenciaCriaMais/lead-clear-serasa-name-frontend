@@ -7,6 +7,8 @@ import {BannerComponent} from './banner/banner.component';
 import {AboutMeComponent} from './about-me/about-me.component';
 import {HeaderComponent} from './header/header.component';
 import {ListLeadComponent} from './list-lead/list-lead.component';
+import {NgxMaskDirective} from "ngx-mask";
+import {MessagesControlModule} from "../../shared/messages-control-validations/messages-control.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {ListLeadComponent} from './list-lead/list-lead.component';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    MessagesControlModule
   ],
   exports: [
     FooterComponent,

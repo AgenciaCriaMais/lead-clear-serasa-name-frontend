@@ -12,21 +12,25 @@
             <p class="col_desc">
               Preencha o formulário de contato rápido e um de nossos agentes entrará em contato em até 24 horas.
             </p>
-            <form (ngSubmit)="onSubmit()" [formGroup]="form" id="contact_form">
+            <form [formGroup]="form" id="contact_form">
               <input formControlName="name" id="name" placeholder="Nome Completo" required type="text">
+              <messages-control-validations [control]="form.get('name')">
+              </messages-control-validations>
               <input formControlName="email" id="email" name="email" placeholder="Seu melhor e-mail" required
                      type="email">
-              <input formControlName="cpf" id="cpf" name="cpf" placeholder="Seu CPF" required type="text">
-              <select formControlName="syndicate">
-                <option *ngFor="let sindicato of sindicatos" [value]="sindicato.id">
-                  {{ sindicato.name }}
-                </option>
-              </select>
-              <input formControlName="phone" id="phone" name="phone" placeholder="Seu telefone. Exemplo: 61999999999"
+              <messages-control-validations [control]="form.get('email')">
+              </messages-control-validations>
+              <input formControlName="cpf" id="cpf" name="cpf" placeholder="Seu CPF" mask="000.000.000-00" required type="text">
+              <messages-control-validations [control]="form.get('cpf')">
+              </messages-control-validations>
+              <input formControlName="syndicate" id="syndicate" name="syndicate" placeholder="Veio de qual sindicato?" required type="text">
+              <messages-control-validations [control]="form.get('syndicate')">
+              </messages-control-validations>
+              <input formControlName="phone" id="phone" name="phone" mask="(00) 0 0000-0000" placeholder="Seu telefone. Exemplo: 61999999999"
                      required type="text">
-              <button class="mt_btn_white" id="submit-btn">Agende um Contato Conosco Hoje!<span
-                class="mt_load"><span></span></span>
-              </button>
+              <messages-control-validations [control]="form.get('phone')">
+              </messages-control-validations>
+              <button type="submit" class="btn btn-primary mb-2 mt_btn_white" [disabled]="!form.valid" (click)="onSubmit()">Agende um Contato Conosco Hoje!</button>
               <div id="msg"></div>
             </form>
           </div>
