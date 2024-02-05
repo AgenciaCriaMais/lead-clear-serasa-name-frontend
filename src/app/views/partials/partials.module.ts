@@ -10,6 +10,7 @@ import {ListLeadComponent} from './list-lead/list-lead.component';
 import {NgxMaskDirective} from "ngx-mask";
 import {MessagesControlModule} from "../../shared/messages-control-validations/messages-control.module";
 
+
 @NgModule({
   declarations: [
     FooterComponent,
