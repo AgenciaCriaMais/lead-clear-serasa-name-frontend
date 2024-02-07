@@ -20,17 +20,22 @@
                      type="email">
               <messages-control-validations [control]="form.get('email')">
               </messages-control-validations>
-              <input formControlName="cpf" id="cpf" name="cpf" placeholder="Seu CPF" mask="000.000.000-00" required type="text">
+              <input formControlName="cpf" id="cpf" name="cpf" placeholder="Seu CPF" mask="000.000.000-00" required
+                     type="text">
               <messages-control-validations [control]="form.get('cpf')">
               </messages-control-validations>
-              <input formControlName="syndicate" id="syndicate" name="syndicate" placeholder="Veio de qual sindicato?" required type="text">
+              <input formControlName="syndicate" id="syndicate" name="syndicate" placeholder="Veio de qual sindicato?"
+                     required type="text">
               <messages-control-validations [control]="form.get('syndicate')">
               </messages-control-validations>
-              <input formControlName="phone" id="phone" name="phone" mask="(00) 0 0000-0000" placeholder="Seu telefone. Exemplo: 61999999999"
+              <input formControlName="phone" id="phone" name="phone" mask="(00) 0 0000-0000"
+                     placeholder="Seu telefone. Exemplo: 61999999999"
                      required type="text">
               <messages-control-validations [control]="form.get('phone')">
               </messages-control-validations>
-              <button type="submit" class="btn btn-primary mb-2 mt_btn_white" [disabled]="!form.valid" (click)="onSubmit()">Agende um Contato Conosco Hoje!</button>
+              <button type="submit" class="btn btn-primary mb-2 mt_btn_white" [disabled]="!form.valid"
+                      (click)="onSubmit()">Agende um Contato Conosco Hoje!
+              </button>
               <div id="msg"></div>
             </form>
           </div>
@@ -70,15 +75,6 @@
           </ul>
           <div class="clearfix"></div>
         </div>
-      </div>
-    </div>
-    <div class="">
-      <div class="row">
-        <button (click)="onDebugging()" class="btn btn-default ">:: Debugar Formuário em Desenvolvimento ::<span
-          class="mt_load"><span></span></span></button>
-        <pre *ngIf="form && debugging">
-          {{ form.value|json }}
-        </pre>
       </div>
     </div>
   </div>

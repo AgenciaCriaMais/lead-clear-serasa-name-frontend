@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 /**
  * @author Jean Paul - <jeanpaulwebb@gmail.com>
