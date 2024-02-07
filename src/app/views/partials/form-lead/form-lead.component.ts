@@ -3,10 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LeadModel} from "../../../state/lead/models/lead-model";
 import {LeadService} from "../../../core/services/lead.service";
 import {Store} from "@ngrx/store";
-import {loadLeads} from "../../../state/lead/actions/lead.actions";
 import {AppState} from "../../../state/lead/reducers/lead.reducer";
-import {Observable} from "rxjs";
-import {selectAllLeads} from "../../../state/lead/selectors/lead.selectors";
 import {BusinessResponseObject} from "../../../core/models/business-rqobject";
 
 /**
@@ -23,8 +20,6 @@ import {BusinessResponseObject} from "../../../core/models/business-rqobject";
 })
 export class FormLeadComponent implements OnInit {
   public form!: FormGroup;
-  public debugging = false;
-
 
   constructor(private formBuilder: FormBuilder,
               private leadService: LeadService,
@@ -49,13 +44,6 @@ export class FormLeadComponent implements OnInit {
         }
       });
     }
-  }
-
-  /**
-   * @description Ativa ou desativa o modo de depuração.
-   */
-  public onDebugging(): void {
-    this.debugging = !this.debugging;
   }
 
   private createForm(): void {

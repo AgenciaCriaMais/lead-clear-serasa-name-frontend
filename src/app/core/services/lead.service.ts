@@ -28,8 +28,8 @@ export class LeadService {
     return this.http.get<LeadModel>(`${this.apiUrl}/${id}`);
   }
 
-  create(formLead: LeadModel): Observable<BusinessResponseObject<LeadModel>> {
-    return this.http.post<BusinessResponseObject<LeadModel>>(this.apiUrl, formLead);
+  create(lead: LeadModel): Observable<BusinessResponseObject<LeadModel>> {
+    return this.http.post<BusinessResponseObject<LeadModel>>(this.apiUrl, lead);
   }
 
   update(id: number, formLead: LeadModel): Observable<LeadModel> {

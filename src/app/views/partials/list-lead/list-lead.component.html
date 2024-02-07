@@ -1,7 +1,7 @@
 <div id="leads">
   <ol class="breadcrumb">
-    <li><a href="#">Dasboard</a></li>
-    <li><a class="active" href="#">Leads</a></li>
+    <li><a (click)="goHome()">Dasboard</a></li>
+    <li><a class="active" routerLink="/">Leads</a></li>
   </ol>
   <div class="bs-example" data-example-id="panel-without-body-with-table">
     <div class="panel panel-default">
@@ -14,7 +14,6 @@
             <th>Nome</th>
             <th>E-mail</th>
             <th>CPF</th>
-            <th>Status</th>
             <th>Telefone</th>
             <th>Sindicato</th>
             <th>Ação</th>
@@ -22,14 +21,16 @@
           </thead>
           <tbody>
           <tr *ngFor="let lead of leads$ | async, let i = index">
-            <th scope="row">{{ i + 1 }}</th>
+            <th scope="row">{{ lead?.id }}</th>
             <td>{{ lead?.name }}</td>
             <td>{{ lead?.email }}</td>
             <td>{{ lead?.cpf }}</td>
-            <td>{{ lead?.status }}</td>
             <td>{{ lead?.phone }}</td>
             <td>{{ lead?.syndicate }}</td>
-            <td>Editar | Excluir</td>
+            <td>
+              <a class="btn btn-info" (click)="edit(lead)" data-toggle="modal" data-target="#editLead">Editar</a> |
+              <a class="btn btn-danger" (click)="delete(lead)">Excluir</a>
+            </td>
           </tr>
           </tbody>
         </table>
@@ -38,8 +39,8 @@
   </div>
   <nav aria-label="..." class="paginate">
     <ul class="pager">
-      <li><a href="#">Voltar</a></li>
-      <li><a href="#">Avançar</a></li>
+      <li><a>Voltar</a></li>
+      <li><a>Avançar</a></li>
     </ul>
   </nav>
   <footer class="footer position-absolute">
@@ -54,4 +55,50 @@
       </div>
     </div>
   </footer>
+</div>
+<div class="modal fade" id="editLead" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Lead: {{ form.get('name')?.value }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form" id="contact_form">
+          <input formControlName="name" id="name" placeholder="Nome Completo" required type="text">
+          <messages-control-validations [control]="form.get('name')">
+          </messages-control-validations>
+          <input formControlName="email" id="email" name="email" placeholder="Seu melhor e-mail" required
+                 type="email">
+          <messages-control-validations [control]="form.get('email')">
+          </messages-control-validations>
+          <input formControlName="cpf" id="cpf" name="cpf" placeholder="Seu CPF" mask="000.000.000-00" required
+                 type="text">
+          <messages-control-validations [control]="form.get('cpf')">
+          </messages-control-validations>
+          <input formControlName="syndicate" id="syndicate" name="syndicate" placeholder="Veio de qual sindicato?"
+                 required type="text">
+          <messages-control-validations [control]="form.get('syndicate')">
+          </messages-control-validations>
+          <input formControlName="phone" id="phone" name="phone" mask="(00) 0 0000-0000"
+                 placeholder="Seu telefone. Exemplo: 61999999999"
+                 required type="text">
+          <messages-control-validations [control]="form.get('phone')">
+          </messages-control-validations>
+          <h6>Observações:</h6>
+          <textarea name="description" id="description" cols="30" rows="10" formControlName="description"></textarea>
+          <div id="msg"></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="!form.valid">
+          Salvar {{ form.touched && form.dirty ? 'Edição' : '' }}
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

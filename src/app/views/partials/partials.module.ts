@@ -9,6 +9,7 @@ import {HeaderComponent} from './header/header.component';
 import {ListLeadComponent} from './list-lead/list-lead.component';
 import {NgxMaskDirective} from "ngx-mask";
 import {MessagesControlModule} from "../../shared/messages-control-validations/messages-control.module";
+import {RouterLink} from "@angular/router";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {MessagesControlModule} from "../../shared/messages-control-validations/m
     CommonModule,
     ReactiveFormsModule,
     NgxMaskDirective,
-    MessagesControlModule
+    MessagesControlModule,
+    RouterLink
   ],
   exports: [
     FooterComponent,
