@@ -23,19 +23,16 @@ import {BusinessResponseObject} from "../../../core/models/business-rqobject";
 })
 export class FormLeadComponent implements OnInit {
   public form!: FormGroup;
-  public debugging = false; // Flag para habilitar ou desabilitar o modo de depuração.
-  public leads$: Observable<LeadModel[]>;
+  public debugging = false;
 
 
   constructor(private formBuilder: FormBuilder,
               private leadService: LeadService,
               private store: Store<AppState>) {
-    this.leads$ = this.store.select(selectAllLeads);
   }
 
   ngOnInit(): void {
     this.createForm();
-    this.store.dispatch(loadLeads()); // Ação para carregar os leads.
   }
 
   public onSubmit(): void {
@@ -44,7 +41,6 @@ export class FormLeadComponent implements OnInit {
       this.leadService.create(formData).subscribe({
         next: (result: BusinessResponseObject<LeadModel>): void => {
           if (result && result.success) {
-            this.store.dispatch(loadLeads()); //Ação para recarregar os leads após o sucesso.
             this.form.reset();
           }
         },

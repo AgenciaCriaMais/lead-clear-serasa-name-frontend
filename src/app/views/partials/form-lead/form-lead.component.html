@@ -84,13 +84,6 @@
         <pre *ngIf="form && debugging">
           {{ form.value|json }}
         </pre>
-        <h4>Lista de Leads</h4>
-        <ul>
-          <li><strong>Nome | Email</strong></li>
-          <li *ngFor="let lead of leads$ | async">
-            {{ lead.name }} - {{ lead.email }}
-          </li>
-        </ul>
       </div>
     </div>
   </div>

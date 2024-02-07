@@ -21,14 +21,14 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let item of '. '.repeat(23).split(' '), let i = index">
+          <tr *ngFor="let lead of leads$ | async, let i = index">
             <th scope="row">{{ i + 1 }}</th>
-            <td>Jean Paul</td>
-            <td>jeanpaulwebb@gmail.com</td>
-            <td>01951532198</td>
-            <td>Em andamento</td>
-            <td>(61) 9 84195908</td>
-            <td>Sinpro</td>
+            <td>{{ lead?.name }}</td>
+            <td>{{ lead?.email }}</td>
+            <td>{{ lead?.cpf }}</td>
+            <td>{{ lead?.status }}</td>
+            <td>{{ lead?.phone }}</td>
+            <td>{{ lead?.syndicate }}</td>
             <td>Editar | Excluir</td>
           </tr>
           </tbody>
