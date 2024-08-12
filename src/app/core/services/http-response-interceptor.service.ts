@@ -3,6 +3,11 @@ import {HttpErrorResponse, HttpHandler, HttpInterceptor, HttpRequest, HttpRespon
 import {catchError, Observable, tap, throwError} from 'rxjs';
 import Swal from 'sweetalert2';
 
+/**
+ * @author Jean Paul - <jeanpaulwebb@gmail.com>
+ * @class HttpResponseInterceptor
+ * @date 05/02/2024
+ */
 @Injectable()
 export class HttpResponseInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {

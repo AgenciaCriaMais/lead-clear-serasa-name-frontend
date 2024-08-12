@@ -1,13 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {FormLeadDto} from "../../../models/form-lead-dto";
-import {FormLeadService} from "../../../services/form-lead.service";
-import {Router} from "@angular/router";
+import {LeadModel} from "../../../state/lead/models/lead-model";
+import {LeadService} from "../../../core/services/lead.service";
+import {Store} from "@ngrx/store";
+import {AppState} from "../../../state/lead/reducers/lead.reducer";
+import {BusinessResponseObject} from "../../../core/models/business-rqobject";
 
 /**
  * @author Jean Paul - <jeanpaulwebb@gmail.com>
  * @class FormLeadComponent
- * @description Formulário de Lead
+ * @description Componente responsável pela criação de leads.
+ * Utiliza o formulário reativo para captura de dados e o NgRx para gerenciamento de estado.
  * @date 31/01/2024
  */
 @Component({
@@ -17,11 +20,10 @@ import {Router} from "@angular/router";
 })
 export class FormLeadComponent implements OnInit {
   public form!: FormGroup;
-  public debugging = false;
 
   constructor(private formBuilder: FormBuilder,
-              private formLeadService: FormLeadService,
-              private router: Router) {
+              private leadService: LeadService,
+              private store: Store<AppState>) {
   }
 
   ngOnInit(): void {
@@ -29,23 +31,19 @@ export class FormLeadComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    const formData: FormLeadDto = new FormLeadDto(this.form.value);
+    const formData: LeadModel = new LeadModel(this.form.value);
     if (this.form.valid) {
-      this.formLeadService.create(formData).subscribe({
-        next: (result) => {
-          console.log(result);
-          this.form.reset();
+      this.leadService.create(formData).subscribe({
+        next: (result: BusinessResponseObject<LeadModel>): void => {
+          if (result && result.success) {
+            this.form.reset();
+          }
         },
         error: (error) => {
-          debugger;
-          console.error('There was an error!', error);
+          console.error('Erro ao cadastrar lead: ', error);
         }
       });
     }
-  }
-
-  public onDebugging(): void {
-    this.debugging = !this.debugging;
   }
 
   private createForm(): void {

@@ -1,9 +1,10 @@
 /**
  * @author Jean Paul - <jeanpaulwebb@gmail.com>
- * @class FormLeadDto
+ * @class LeadModel
  * @date 31/01/2024
  */
-export class FormLeadDto {
+export class LeadModel {
+  public id!: number;
   public name!: string;
   public email!: string;
   public cpf!: string;
@@ -13,6 +14,7 @@ export class FormLeadDto {
   public description!: string;
 
   constructor(fields?: {
+    id?: number | unknown;
     name?: string | unknown;
     email?: string | unknown;
     cpf?: string | unknown;
